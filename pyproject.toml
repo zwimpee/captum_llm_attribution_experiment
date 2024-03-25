@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "captum_llm_attribution_experiment"
+version = "0.1.0"
+description = "A project to explore LLM attribution with Captum and Transformers in clinical NLP tasks."
+authors = [
+    { name = "Zachary Wimpee", email = "zwimpee@gmail.com" },
+]
+license = {file="LICENSE"}
+readme = "README.md"
+keywords = ["NLP", "clinical", "attribution", "transformers", "captum"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+
+[project.optional-dependencies]
+test = [
+    "pytest>=5.2",
+    "coverage[toml]>=5.2.1",
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+
+[project.entry-points."console_scripts"]
+captum_llm_attribution_experiment = "experiment.__main__:main"
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''

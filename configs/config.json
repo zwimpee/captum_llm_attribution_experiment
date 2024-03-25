@@ -1,0 +1,24 @@
+{
+    "model_name": "epfl-llm/meditron-7b",
+    "task_type": "CausalLM",
+    "attribution_type": "FeatureAblation",
+    "num_trials": 10,           
+    "save_image_path": "/opt/data/attributions/token_attr-002.png",
+    "example": {
+        "age": "25",
+        "ethnicity": "white",
+        "gender": "male",
+        "symptoms": "chest pain, wheezing, shortness of breath",
+        "diagnosis": "covid-19",
+        "treatment": "intubation",
+        "label": "longer"
+    },
+    "groups": {
+        "age": 0,
+        "ethnicity": 0,
+        "gender": 0,
+        "symptoms": 1,
+        "diagnosis": 2,
+        "treatment": 3
+    }
+}
